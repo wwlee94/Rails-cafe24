@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :bulletins
   resources :posts
+  resources :bulletins do
+    resources :posts
+  end
   # root 라우트 정의는 routes.rb 파일에서 최상위에 위치해야 한다.
   root 'welcome#index'
   # get 'welcome/index'
