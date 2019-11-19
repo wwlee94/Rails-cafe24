@@ -13,7 +13,8 @@
 <!--  </a>-->
 <%# end %>
 
-<%= simple_form_for(@post) do |f| %>
+<%#= simple_form_for(@post) do |f| %>
+<%= simple_form_for(@bulletin.present? ? [@post.bulletin, @post] : @post) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :title %>
@@ -21,7 +22,7 @@
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-default' %>
-    <%= link_to 'Show', @post, class: 'btn btn-default' if @post.persisted? %>
-    <%= link_to 'List', posts_path, class: 'btn btn-default' %>
+    <%= link_to 'Show', (@bulletin.present? ? [@post.bulletin, @post] : @post), class: 'btn btn-default' if @post.persisted? %>
+    <%= link_to 'List', (@bulletin.present? ? bulletin_posts_path(@bulletin) : posts_path), class: 'btn btn-default' %>
   </div>
 <% end %>

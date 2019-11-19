@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Listing posts</h2>
+<h2><%= @bulletin['title'] %></h2> <!-- 이거 공지사항, 새소식, 가입인사 이런식으로 바꾸기 -->
 
 <table class="table">
   <thead>
@@ -15,9 +15,12 @@
     <tr>
       <td><%= post.title %></td>
       <td>
-        <%= link_to 'Show', post, class: 'btn btn-default' %>
-        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-default' %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        <%#= link_to 'Show', post, class: 'btn btn-default' %>
+        <%#= link_to 'Edit', edit_post_path(post), class: 'btn btn-default' %>
+        <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        <%= link_to 'Show', (@bulletin.present? ? [post.bulletin, post] : post), class: 'btn btn-default' %>
+        <%= link_to 'Edit', (@bulletin.present? ? edit_bulletin_post_path(post.bulletin, post) : edit_post_path(post)), class: 'btn btn-default' %>
+        <%= link_to 'Destroy', (@bulletin.present? ? [post.bulletin, post] : post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
       </td>
     </tr>
   <% end %>
@@ -25,4 +28,5 @@
 </table>
 
 
-<%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
+<%#= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
+<%= link_to 'New Post', (@bulletin.present? ?  new_bulletin_post_path(@bulletin) : new_post_path), class: 'btn btn-default' %>
