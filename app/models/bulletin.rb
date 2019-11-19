@@ -9,4 +9,6 @@ class Bulletin < ApplicationRecord
 
 
   has_many :posts, dependent: :destroy # destroy -> bulletin 삭제할때 posts도 cascade로 같이 삭제한다는 의미
+  as_enum :post_type , bulletin: 0, blog: 1, gallery: 2
+  # enum post_type: {Bulletin: 0, Blog: 1, Gallery: 2}
 end

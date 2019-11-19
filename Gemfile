@@ -56,3 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 프로젝트 진행 추가항목
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
+gem 'simple_enum'
