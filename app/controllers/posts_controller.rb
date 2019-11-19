@@ -82,6 +82,6 @@ class PostsController < ApplicationController
     # Strong Parameters 기능 -> 접근 가능 한 속성을 정의해 둔 것
     # White List 지정 하기
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content,:picture, :picture_cache)
     end
 end

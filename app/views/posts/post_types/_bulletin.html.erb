@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= bulletin_name params[:bulletin_id] %></h2>
+<h2><%= bulletin_name params[:bulletin_id] %> <small><%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%></small></h2>
 <!--<h3><%#= @bulletin['title'] %></h3> -->  <!-- 이거 공지사항, 새소식, 가입인사 이런식으로 바꾸기 -->
 
 <table class="table">

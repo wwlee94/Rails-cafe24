@@ -54,6 +54,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 프로젝트 진행 추가항목
+# 젬을 추가하거나 설정파일을 변경한 경우에는 반드시 웹서버를 다시 시작해야 한다.
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
-gem 'simple_enum'
+gem 'simple_enum' # as_enum 사용하기 위한 젬
+gem 'carrierwave' # 이미지 업로드
+gem 'mini_magick' # 이미지 크기 조절
+gem "font-awesome-rails" # 폰트 변경
+

@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   # 위에서와같이 has_many 다음에는 항상 복수형(posts)을 지정해야 하고,
   # belongs_to 다음에는 항상 단수형(bulletin)으로 지정해야 한다.
   belongs_to :bulletin
+  mount_uploader :picture, PictureUploader
 end
