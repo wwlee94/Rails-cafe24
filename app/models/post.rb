@@ -4,4 +4,6 @@ class Post < ApplicationRecord
   # belongs_to 다음에는 항상 단수형(bulletin)으로 지정해야 한다.
   belongs_to :bulletin
   mount_uploader :picture, PictureUploader
+
+  has_many :comments, dependent: :destroy
 end

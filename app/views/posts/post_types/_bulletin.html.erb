@@ -14,7 +14,8 @@
   <tbody>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= post.title %></td>
+<!--      <td><%#= post.title %></td>-->
+      <td><%= post.title %> <small>( <%= post.comments.size %> )</small></td>
       <td>
         <%#= link_to 'Show', post, class: 'btn btn-default' %>
         <%#= link_to 'Edit', edit_post_path(post), class: 'btn btn-default' %>

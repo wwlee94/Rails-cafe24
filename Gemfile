@@ -61,4 +61,6 @@ gem 'simple_enum' # as_enum 사용하기 위한 젬
 gem 'carrierwave' # 이미지 업로드
 gem 'mini_magick' # 이미지 크기 조절
 gem "font-awesome-rails" # 폰트 변경
+gem 'acts-as-taggable-on'
+
 

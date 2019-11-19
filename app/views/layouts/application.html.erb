@@ -34,8 +34,12 @@
     </div>
   </div>
 
+  <!-- 위의 HTML 코드 중 하단에 있는  yield  부분을 주목하자.
+  우선은 각 액션이 실행된 후 HTML로 렌더링되는 결과가 이 부분에 삽입된다고 알아 두자.
+  나중에 yield에 대해서 자세히 다루도록 하겠다. -->
   <div class="container">
 
+    <%= render partial: "shared/flash_messages", flash: flash %>
     <%= yield %>
 
   </div> <!-- /container -->
