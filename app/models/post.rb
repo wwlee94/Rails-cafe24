@@ -6,4 +6,8 @@ class Post < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   has_many :comments, dependent: :destroy
+
+  # 유효성 검증 -> 내용 입력하지 않으면 에러처리
+  validates :title, presence: true
+  validates :description, presence: true
 end

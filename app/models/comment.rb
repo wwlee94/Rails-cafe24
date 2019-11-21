@@ -5,6 +5,6 @@ class Comment < ApplicationRecord
   # 그리고 해당 모델(Comment) 클래스에는 belongs_to :post라는 관계선언을 자동으로 추가해 준다.
   belongs_to :post
 
-  # 유효성 검증 -> 내용 입력하지 않으면 처리
+  # 유효성 검증 -> 내용 입력하지 않으면 에러처리
   validates :body, presence: true
 end
